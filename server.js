@@ -58,7 +58,7 @@ scheduler.scheduleJob('* * * * * *', () => {
 
 const requestHandler = (request, response) => {
   console.log(request.url);
-  response.writeHead(200, {"Content-Type": "application/json"});
+  response.writeHead(200, {"Content-Type": "application/json", 'Access-Control-Allow-Origin': '*'});
   response.end(JSON.stringify(
     rooms.map((room) => {
       return {
